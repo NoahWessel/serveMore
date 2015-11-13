@@ -453,14 +453,6 @@ span.tags {
     padding: 2px 4px;
 }
 
-.dropdown-menu {
-    background-color: #34495e;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    width: 250px;
-    margin-left: -125px;
-    left: 50%;
-}
 
 .dropdown-menu .divider {
     background:none;
@@ -472,6 +464,12 @@ span.tags {
 
 .dropup .dropdown-menu {
     margin-bottom:10px;
+	background-color: #34495e;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    width: 250px;
+    margin-left: -125px;
+    left: 50%;
 }
 
 .dropup .dropdown-menu:before {
