@@ -108,14 +108,14 @@
                                         $row = $result->fetch_array(MYSQLI_ASSOC);
                                         if ($row)
                                         {
-                                            echo '<h2>' . $row['firstname'] . ' ' . $row['lastname'] . '</h2>';                                            
+                                            echo '<h2>' . $row['firstname'] . ' ' . $row['lastname'] . '</h2>';  
+                                            echo '<p><strong>About: </strong> ' . $row['about'] . '</p>';                                          
                                         }
             		
                                         $result->close();
                                         $conn->close();
                                         ?>
-                                                            			
-                    			<p><strong>About: </strong> Web Designer / UI. </p>
+                                                            			                    			
                     			<p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
                     			<p><strong>Skills: </strong>
                         			<span class="tags">html5</span>
