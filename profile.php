@@ -95,36 +95,36 @@
 					<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
     	 			<div class="well profile">
             			<div class="col-sm-12">
-                			<div class="col-xs-12 col-sm-8">                                        
-                                            <?php 
+                			<div class="col-xs-12 col-sm-8">
+                                            <?php
                                             $conn = new mysqli('localhost', 'root', '', 'servemoredata');
                                             if ($conn->connect_error) die($conn->connect_error);
                                             $user = 9;
                                             $query = "SELECT * FROM users WHERE id=$user";
-                                            
+
                                             $result = $conn->query($query);
                                             if (!$result) die($conn->error);
 
                                             $row = $result->fetch_array(MYSQLI_ASSOC);
                                             if ($row)
                                             {
-                                                echo '<h2>' . $row['firstname'] . ' ' . $row['lastname'] . '</h2>';  
-                                                echo '<p><strong>About: </strong> ' . $row['about'] . '</p>';                                          
-                                            }            		
+                                                echo '<h2>' . $row['firstname'] . ' ' . $row['lastname'] . '</h2>';
+                                                echo '<p><strong>About: </strong> ' . $row['about'] . '</p>';
+                                            }
                                             $result->close();
-                                            
+
                                             $query = "SELECT skill FROM skills WHERE user=$user";
                                             $result = $conn->query($query);
                                             if (!$result) die($conn->error);
-                                            
+
                                             echo '<p><strong>Skills: </strong>';
                                             for ($i = 0; $i < $result->num_rows; ++$i)
                                             {
                                                 $result->data_seek($i);
-                                                $row = $result->fetch_array(MYSQLI_ASSOC);            
+                                                $row = $result->fetch_array(MYSQLI_ASSOC);
                                                 echo '<span class="tags">' . $row['skill'] . '</span>';
-                                            }     
-                                                                                                                                                                                                                
+                                            }
+
                                             echo '</p>';
                                             $result->close();
                                             $conn->close();
