@@ -483,3 +483,9 @@ span.tags {
     margin-left: -10px;
     z-index: 10;
 }
+
+
+/* #########################################
+   #              REPORT FORM              #
+   ######################################### */
+#success_message{ display: none;}
