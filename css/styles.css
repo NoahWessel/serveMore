@@ -1,4 +1,11 @@
-body {
+/* #########################################
+   #                 HOME                  #
+   ######################################### */
+.pageBody {
+	margin-top:1em;
+}
+
+body.home {
 	background: url(images/background.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -6,7 +13,7 @@ body {
 	background-size: cover;
 }
 
-#headerHome{
+#homeHeader {
 	font-size:5em;
 	color:white;
 }
@@ -29,13 +36,19 @@ body {
   color: inherit;
 }
 
-/* navbar */
+
+/* #########################################
+   #                NAV BAR                #
+   ######################################### */
 .navbar-custom {
 	background-color: #252839;
 	border-color: #f2b632;
 }
 
-/* Title */
+
+/* #########################################
+   #                TITLE                  #
+   ######################################### */
 .navbar-custom .navbar-brand {
 	color: #f2b632;
 }
@@ -45,7 +58,10 @@ body {
 	 color: #b5b5b7;
 }
 
-/* Link */
+
+/* #########################################
+   #                 LINK                  #
+   ######################################### */
 .navbar-custom .navbar-nav > li > a {
 	color: #b5b5b7;
 }
@@ -71,7 +87,10 @@ body {
 	background-color: #b5b5b7;
 }
 
-/* Caret */
+
+/* #########################################
+   #                 CARET                 #
+   ######################################### */
 .navbar-custom .navbar-nav > .dropdown > a .caret {
 	border-top-color: #777;
 	border-bottom-color: #777;
@@ -90,7 +109,10 @@ body {
 	 border-bottom-color: #555;
 }
 
-/* mobile version */
+
+/* #########################################
+   #            MOBILE VERSION             #
+   ######################################### */
 .navbar-custom .navbar-toggle {
 	border-color: #DDD;
 }
@@ -104,6 +126,10 @@ body {
 	background-color: #f2b632;
 }
 
+.navbar-custom .navbar-toggle:hover .icon-bar {
+    background-color: #252839;
+}
+
 @media (max-width: 767px) {
 	.navbar-custom .navbar-nav .open .dropdown-menu > li > a {
 		color: #777;
@@ -114,7 +140,9 @@ body {
 	}
 }
 
-/* Search */
+/* #########################################
+   #                SEARCH                 #
+   ######################################### */
 .dropdown.dropdown-lg .dropdown-menu {
     margin-top: -1px;
     padding: 6px 20px;
@@ -156,7 +184,9 @@ body {
     }
 }
 
-/* Buttons */
+/* #########################################
+   #               BUTTONS                 #
+   ######################################### */
 .btn-outline {
     background-color: transparent;
     color: inherit;
@@ -194,13 +224,6 @@ body {
 .myBackground {
 	padding-top:5em;
 }
-
-/* HOME */
-.pageBody {
-	margin-top:1em;
-}
-
-
 
 
 /* #####################################################################
@@ -350,3 +373,33 @@ body {
 .form-control {
   border-radius: 0px;
 }
+
+
+/* #########################################
+   #            SEARCH RESULTS             #
+   ######################################### */
+
+@import "http://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
+
+.mb20 { margin-bottom: 20px; margin-top:3em; }
+
+hgroup { padding-left: 15px; border-bottom: 1px solid #ccc; }
+hgroup h1 { font: 500 normal 1.625em "Roboto",Arial,Verdana,sans-serif; color: #2a3644; margin-top: 0; line-height: 1.15; }
+hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; color: #2a3644; margin: 0; padding-bottom: 10px; }
+
+.search-result .thumbnail { border-radius: 0 !important; }
+.search-result:first-child { margin-top: 0 !important; }
+.search-result { margin-top: 20px; }
+.search-result .col-md-2 { border-right: 1px dotted #ccc; min-height: 140px; }
+.search-result ul { padding-left: 0 !important; list-style: none;  }
+.search-result ul li { font: 400 normal .85em "Roboto",Arial,Verdana,sans-serif;  line-height: 30px; }
+.search-result ul li i { padding-right: 5px; }
+.search-result .col-md-7 { position: relative; }
+.search-result h3 { font: 500 normal 1.375em "Roboto",Arial,Verdana,sans-serif; margin-top: 0 !important; margin-bottom: 10px !important; }
+.search-result h3 > a, .search-result i { color: #248dc1 !important; }
+.search-result p { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; }
+.search-result span.plus { position: absolute; right: 0; top: 126px; }
+.search-result span.plus a { background-color: #248dc1; padding: 5px 5px 3px 5px; }
+.search-result span.plus a:hover { background-color: #414141; }
+.search-result span.plus a i { color: #fff !important; }
+.search-result span.border { display: block; width: 97%; margin: 0 15px; border-bottom: 1px dotted #ccc; }
