@@ -39,7 +39,7 @@
                		<li class="active"><a href="about.html">ABOUT</a></li>
                		<li><a href="apply.html">APPLY</a></li>
                		<li><a href="promote.html">PROMOTE</a></li>
-               		<li><a href="profile.html">MY PROFILE</a></li>
+               		<li><a href="profile.php">MY PROFILE</a></li>
                		<li><a href="report.html">REPORT</a></li>
            		</ul>
          	</div>
@@ -96,7 +96,25 @@
     	 			<div class="well profile">
             			<div class="col-sm-12">
                 			<div class="col-xs-12 col-sm-8">
-                    			<h2>Noah Wessel</h2>
+                                        
+                                        <?php 
+                                        $conn = new mysqli('localhost', 'root', '', 'servemoredata');
+                                        if ($conn->connect_error) die($conn->connect_error);
+                                        $query = "SELECT * FROM users WHERE id=1";
+                                        
+                                        $result = $conn->query($query);
+                                        if (!$result) die($conn->error);
+
+                                        $row = $result->fetch_array(MYSQLI_ASSOC);
+                                        if ($row)
+                                        {
+                                            echo '<h2>' . $row['firstname'] . ' ' . $row['lastname'] . '</h2>';                                            
+                                        }
+            		
+                                        $result->close();
+                                        $conn->close();
+                                        ?>
+                                                            			
                     			<p><strong>About: </strong> Web Designer / UI. </p>
                     			<p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
                     			<p><strong>Skills: </strong>
