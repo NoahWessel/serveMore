@@ -132,7 +132,7 @@
                 			</div>
                 			<div class="col-xs-12 col-sm-4 text-center">
                     			<figure>
-                        			<img src="images/profilePic.jpg" class="img-circle img-responsive">
+                        			<img src="css/images/profilePic.jpg" class="img-circle img-responsive">
                         			<figcaption class="ratings">
                             			<p>Ratings
                             			<a href="#">
