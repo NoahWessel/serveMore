@@ -99,7 +99,7 @@
                                             <?php
                                             $conn = new mysqli('localhost', 'root', '', 'servemoredata');
                                             if ($conn->connect_error) die($conn->connect_error);
-                                            $user = 9;
+                                            $user = 9; // change this number for a different user (currently 1-9 are valid)
                                             $query = "SELECT * FROM users WHERE id=$user";
 
                                             $result = $conn->query($query);
