@@ -96,37 +96,43 @@
     	 			<div class="well profile">
             			<div class="col-sm-12">
                 			<div class="col-xs-12 col-sm-8">
-                                        
-                                        <?php 
-                                        $conn = new mysqli('localhost', 'root', '', 'servemoredata');
-                                        if ($conn->connect_error) die($conn->connect_error);
-                                        $query = "SELECT * FROM users WHERE id=1";
-                                        
-                                        $result = $conn->query($query);
-                                        if (!$result) die($conn->error);
+                                            <?php
+                                            $conn = new mysqli('localhost', 'root', '', 'servemoredata');
+                                            if ($conn->connect_error) die($conn->connect_error);
+                                            $user = 9; // change this number for a different user (currently 1-9 are valid)
+                                            $query = "SELECT * FROM users WHERE id=$user";
 
-                                        $row = $result->fetch_array(MYSQLI_ASSOC);
-                                        if ($row)
-                                        {
-                                            echo '<h2>' . $row['firstname'] . ' ' . $row['lastname'] . '</h2>';  
-                                            echo '<p><strong>About: </strong> ' . $row['about'] . '</p>';                                          
-                                        }
-            		
-                                        $result->close();
-                                        $conn->close();
-                                        ?>
-                                                            			                    			
-                    			<p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-                    			<p><strong>Skills: </strong>
-                        			<span class="tags">html5</span>
-                        			<span class="tags">css3</span>
-                        			<span class="tags">jquery</span>
-                        			<span class="tags">bootstrap3</span>
-                    			</p>
+                                            $result = $conn->query($query);
+                                            if (!$result) die($conn->error);
+
+                                            $row = $result->fetch_array(MYSQLI_ASSOC);
+                                            if ($row)
+                                            {
+                                                echo '<h2>' . $row['firstname'] . ' ' . $row['lastname'] . '</h2>';
+                                                echo '<p><strong>About: </strong> ' . $row['about'] . '</p>';
+                                            }
+                                            $result->close();
+
+                                            $query = "SELECT skill FROM skills WHERE user=$user";
+                                            $result = $conn->query($query);
+                                            if (!$result) die($conn->error);
+
+                                            echo '<p><strong>Skills: </strong>';
+                                            for ($i = 0; $i < $result->num_rows; ++$i)
+                                            {
+                                                $result->data_seek($i);
+                                                $row = $result->fetch_array(MYSQLI_ASSOC);
+                                                echo '<span class="tags">' . $row['skill'] . '</span>';
+                                            }
+
+                                            echo '</p>';
+                                            $result->close();
+                                            $conn->close();
+                                            ?>
                 			</div>
                 			<div class="col-xs-12 col-sm-4 text-center">
                     			<figure>
-                        			<img src="images/profilePic.jpg" class="img-circle img-responsive">
+                        			<img src="css/images/profilePic.jpg" class="img-circle img-responsive">
                         			<figcaption class="ratings">
                             			<p>Ratings
                             			<a href="#">
