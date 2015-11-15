@@ -1,8 +1,14 @@
 /* #########################################
-   #                 HOME                  #
+   #                MISC.                  #
    ######################################### */
 .pageBody {
 	margin-top:1em;
+}
+
+body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   	font-weight: 300;
+	font-size:1.5em;
 }
 
 body.home {
@@ -26,14 +32,48 @@ body.home {
 }
 
 .vcenter {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+
 }
 
 .myBackground {
   background-color: rgba(255,255,255, 0.0);
   color: inherit;
+}
+
+/* centered columns styles */
+.c-center {
+    display:table !important;
+    height:300px;
+}
+
+.content {
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+}
+
+.greyDiv {
+	background-color:#DDD;
+}
+
+.container-fluid {
+	padding:4em 2em;
+}
+
+.bottomBtn {
+	position: relative;
+	height:200px;
+}
+
+.bottomBtn a {
+	  position: absolute;
+	  top: 40%;
+	  left: 40%;
 }
 
 
