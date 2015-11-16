@@ -94,22 +94,22 @@
 				<div class="row">
 					<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
     	 			<div class="well profile">
-            			<div class="col-sm-12">
-                			<div class="col-xs-12 col-sm-8">
-                                            <?php
+            			<div class="col-sm-12">                			
+                                        <?php
+                                            echo "<div class='col-xs-12 col-sm-8'>";
                                             $conn = new mysqli('localhost', 'root', '', 'servemoredata');
                                             if ($conn->connect_error) die($conn->connect_error);
-                                            $user = 9; // change this number for a different user (currently 1-9 are valid)
+                                            $user = 1; // change this number for a different user (currently 1-9 are valid)
                                             $query = "SELECT * FROM users WHERE id=$user";
 
                                             $result = $conn->query($query);
                                             if (!$result) die($conn->error);
 
-                                            $row = $result->fetch_array(MYSQLI_ASSOC);
-                                            if ($row)
+                                            $u_row = $result->fetch_array(MYSQLI_ASSOC);
+                                            if ($u_row)
                                             {
-                                                echo '<h2>' . $row['firstname'] . ' ' . $row['lastname'] . '</h2>';
-                                                echo '<p><strong>About: </strong> ' . $row['about'] . '</p>';
+                                                echo '<h2>' . $u_row['firstname'] . ' ' . $u_row['lastname'] . '</h2>';
+                                                echo '<p><strong>About: </strong> ' . $u_row['about'] . '</p>';
                                             }
                                             $result->close();
 
@@ -121,39 +121,19 @@
                                             for ($i = 0; $i < $result->num_rows; ++$i)
                                             {
                                                 $result->data_seek($i);
-                                                $row = $result->fetch_array(MYSQLI_ASSOC);
-                                                echo '<span class="tags">' . $row['skill'] . '</span>';
+                                                $s_row = $result->fetch_array(MYSQLI_ASSOC);
+                                                echo '<span class="tags">' . $s_row['skill'] . '</span>';
                                             }
 
-                                            echo '</p>';
+                                            echo "</p></div><div class='col-xs-12 col-sm-4 text-center'>";
+                                            $pic = $u_row['picture'];
+                                            $path = "profilePics/$pic";
+                                            echo "<img src='$path' class='img-circle img-responsive'>";
+                                            echo "</div>";
+                                            
                                             $result->close();
                                             $conn->close();
-                                            ?>
-                			</div>
-                			<div class="col-xs-12 col-sm-4 text-center">
-                    			<figure>
-                        			<img src="css/images/profilePic.jpg" class="img-circle img-responsive">
-                        			<figcaption class="ratings">
-                            			<p>Ratings
-                            			<a href="#">
-                                			<span class="fa fa-star"></span>
-                            			</a>
-                            			<a href="#">
-                                			<span class="fa fa-star"></span>
-                            			</a>
-                            			<a href="#">
-                                			<span class="fa fa-star"></span>
-                            			</a>
-                            			<a href="#">
-                                			<span class="fa fa-star"></span>
-                            			</a>
-                            			<a href="#">
-                                 			<span class="fa fa-star-o"></span>
-                            			</a>
-                            			</p>
-                        			</figcaption>
-                    			</figure>
-                			</div>
+                                        ?>                			
             			</div>
             			<div class="col-xs-12 divider text-center">
                 			<div class="col-xs-12 col-sm-4 emphasis">
