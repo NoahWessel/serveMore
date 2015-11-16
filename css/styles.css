@@ -15,6 +15,10 @@ hr {
 	border-width:4px;
 }
 
+#homeContent {
+	margin-top: 20%;
+}
+
 body.home {
 	background: url(images/background.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
