@@ -53,7 +53,7 @@
 			<div class="row">
 				<div class="col-md-12">
             		<div class="input-group" id="adv-search">
-                		<input type="text" class="form-control" placeholder="Search for snippets" />
+                		<input type="text" class="form-control" placeholder="Search for Opportunities" />
                 		<div class="input-group-btn">
                     		<div class="btn-group" role="group">
                         		<div class="dropdown dropdown-lg">
@@ -94,7 +94,7 @@
 				<div class="row">
 					<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
     	 			<div class="well profile">
-            			<div class="col-sm-12">                			
+            			<div class="col-sm-12">
                                         <?php
                                             echo "<div class='col-xs-12 col-sm-8'>";
                                             $conn = new mysqli('localhost', 'root', '', 'servemoredata');
@@ -130,10 +130,10 @@
                                             $path = "profilePics/$pic";
                                             echo "<img src='$path' class='img-circle img-responsive'>";
                                             echo "</div>";
-                                            
+
                                             $result->close();
                                             $conn->close();
-                                        ?>                			
+                                        ?>
             			</div>
             			<div class="col-xs-12 divider text-center">
                 			<div class="col-xs-12 col-sm-4 emphasis">
