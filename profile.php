@@ -99,7 +99,7 @@
                                             echo "<div class='col-xs-12 col-sm-8'>";
                                             $conn = new mysqli('localhost', 'root', '', 'servemoredata');
                                             if ($conn->connect_error) die($conn->connect_error);
-                                            $user = 1; // change this number for a different user (currently 1-9 are valid)
+                                            $user = 9; // change this number for a different user (currently 1-9 are valid)
                                             $query = "SELECT * FROM users WHERE id=$user";
 
                                             $result = $conn->query($query);
@@ -126,9 +126,8 @@
                                             }
 
                                             echo "</p></div><div class='col-xs-12 col-sm-4 text-center'>";
-                                            $pic = $u_row['picture'];
-                                            $path = "profilePics/$pic";
-                                            echo "<img src='$path' class='img-circle img-responsive'>";
+                                            $pic = $u_row['picture'];                                            
+                                            echo "<img src='profilePics/$pic' class='img-circle img-responsive'>";
                                             echo "</div>";
                                             
                                             $result->close();
