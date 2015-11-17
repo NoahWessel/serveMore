@@ -11,6 +11,14 @@ body {
 	font-size:1.5em;
 }
 
+hr {
+	border-width:4px;
+}
+
+#homeContent {
+	margin-top: 10em;
+}
+
 body.home {
 	background: url(images/background.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -31,8 +39,25 @@ body.home {
 	color: white;
 }
 
+.bodyText {
+	font-size:1.3em;
+	text-align: center;
+	margin-top:2em;
+	margin-bottom:2em;
+	color:#212121;
+}
+
+.disclaimer {
+	font-size:0.8em;
+	text-align: center;
+	margin-top:1em;
+	margin-bottom:2em;
+	color:#212121;
+	padding: 0 5em;
+}
+
 .pageHeader {
-	font-size:4em;
+	font-size:3em;
 	font-weight:400;
 	color:#212121;
 	text-align: center;
@@ -83,19 +108,24 @@ body.home {
 	  left: 40%;
 }
 
+.hero-spacer {
+    margin-top: 50px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
 
 /* #########################################
    #                NAV BAR                #
    ######################################### */
 .navbar-custom {
 	background-color: #252839;
-	border-color: #f2b632;
 }
 
 
-/* #########################################
-   #                TITLE                  #
-   ######################################### */
+/* TITLE */
 .navbar-custom .navbar-brand {
 	color: #f2b632;
 }
@@ -106,9 +136,7 @@ body.home {
 }
 
 
-/* #########################################
-   #                 LINK                  #
-   ######################################### */
+/* LINK */
 .navbar-custom .navbar-nav > li > a {
 	color: #b5b5b7;
 }
@@ -124,20 +152,22 @@ body.home {
 .navbar-custom .navbar-nav > .active > a:hover,
 .navbar-custom .navbar-nav > .active > a:focus {
 	color: #555;
-	background-color: #b5b5b7;
+	background: #b5b5b7;
 }
 
 .navbar-custom .navbar-nav > .open > a,
 .navbar-custom .navbar-nav > .open > a:hover,
 .navbar-custom .navbar-nav > .open > a:focus {
 	color: #555;
-	background-color: #b5b5b7;
+	background: #b5b5b7;
+}
+
+a:active {
+	background: #b5b5b7;
 }
 
 
-/* #########################################
-   #                 CARET                 #
-   ######################################### */
+/* CARET */
 .navbar-custom .navbar-nav > .dropdown > a .caret {
 	border-top-color: #777;
 	border-bottom-color: #777;
@@ -157,9 +187,7 @@ body.home {
 }
 
 
-/* #########################################
-   #            MOBILE VERSION             #
-   ######################################### */
+/* MOBILE VERSION */
 .navbar-custom .navbar-toggle {
 	border-color: #DDD;
 }

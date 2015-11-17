@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Apply</title>
+		<title>Apply Now</title>
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
@@ -47,12 +47,12 @@
 		</div>
     </div>
 
-		<!-- Search -->
+	<!-- Search -->
 		<div class="container pageBody text-center ">
 			<div class="row">
 				<div class="col-md-12">
             		<div class="input-group" id="adv-search">
-                		<input type="text" class="form-control" placeholder="Search for snippets" />
+                		<input type="text" class="form-control" placeholder="Search for Opportunities" />
                 		<div class="input-group-btn">
                     		<div class="btn-group" role="group">
                         		<div class="dropdown dropdown-lg">
@@ -89,10 +89,87 @@
         	</div>
 		</div>
 
-		<!--CONTENT-->
+	<!--CONTENT-->
+
+		<p class="pageHeader pageBody">Apply For This Opportunity</p>
+
+		<hr width="50%">
 
 
+		<div class="container">
+			<p class="bodyText">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mi dolor, rutrum blandit venenatis sit amet, accumsan quis eros. Fusce auctor faucibus neque, ut posuere est maximus sed. Vestibulum diam augue, sagittis sit amet nisi eu, molestie maximus erat.
+			</p>
+		</div>
 
+		<!-- FORM -->
+	    <div class="container" style="margin-top:3em; margin-bottom:3em;">
+			<form class="well form-horizontal" action=" " method="post"  id="contact_form">
+				<fieldset>
+
+				<!-- Form Name -->
+				<legend>Your Info</legend>
+
+				<!-- Check Box-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" >Preferred Contact</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> &nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="status"> Phone &nbsp;&nbsp;
+							<input type="checkbox" name="status"> Email &nbsp;&nbsp;
+							<input type="checkbox" name="status"> Text
+						</div>
+					</div>
+				</div>
+
+				<!-- Text area -->
+				<div class="form-group">
+					<label class="col-md-4 control-label">Why Are You Qualified?</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+							<textarea class="form-control" name="comment" placeholder="Description"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<!-- Text area -->
+				<div class="form-group">
+					<label class="col-md-4 control-label">Goals Hoping To Achieve</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+							<textarea class="form-control" name="goals" placeholder="Goals"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<!-- Text area -->
+				<div class="form-group">
+					<label class="col-md-4 control-label">Resumé (optional)</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+							<input name="resume" placeholder="Resumé" class="form-control"  type="file">
+						</div>
+					</div>
+				</div>
+
+				<!-- Success message -->
+				<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+					</div>
+				</div>
+
+				</fieldset>
+			</form>
+		</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
