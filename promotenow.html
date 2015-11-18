@@ -102,8 +102,13 @@
 		</div>
 
 		<!-- FORM -->
+<<<<<<< HEAD
 	    <div class="container bottomDiv" style="margin-top:3em;">
 			<form class="well form-horizontal" action=" " method="post"  id="contact_form">
+=======
+	    <div class="container" style="margin-top:3em; margin-bottom:3em;">
+			<form class="well form-horizontal" action="promotenow.php" method="post"  id="contact_form">
+>>>>>>> 14e24a7d1e96afedf84fca8d16905f494718d1e6
 				<fieldset>
 
 				<!-- Form Name -->
@@ -115,7 +120,7 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
-							<input  name="title" placeholder="Title" class="form-control"  type="text">
+							<input  name="title" placeholder="Title" class="form-control" type="text" required>
 						</div>
 					</div>
 				</div>
@@ -126,7 +131,7 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
-							<input name="tags" placeholder="Tags" class="form-control"  type="text">
+							<input name="tags" placeholder="Tags" class="form-control" type="text">
 						</div>
 					</div>
 				</div>
@@ -137,7 +142,7 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
-							<input name="location" placeholder="Location" class="form-control"  type="text">
+							<input name="location" placeholder="Location" class="form-control" type="text" required>
 						</div>
 					</div>
 				</div>
@@ -148,7 +153,7 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-							<textarea class="form-control" name="comment" placeholder="Description"></textarea>
+							<textarea class="form-control" name="description" placeholder="Description" required></textarea>
 						</div>
 					</div>
 
@@ -171,13 +176,10 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-							<input name="pictures" placeholder="Pictures" class="form-control"  type="file">
+							<input name="pictures" placeholder="Pictures" class="form-control" type="file">
 						</div>
 					</div>
-				</div>
-
-				<!-- Success message -->
-				<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+				</div>                            
 
 				<!-- Button -->
 				<div class="form-group">
