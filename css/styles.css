@@ -17,6 +17,7 @@ hr {
 
 #homeContent {
 	margin-top: 10em;
+	margin-bottom: 5em;
 }
 
 body.home {
@@ -97,8 +98,7 @@ body.home {
 	padding:4em 2em;
 }
 
-.bottomBtn {
-	position: relative;
+.bottomBtns {
 	height:200px;
 }
 
@@ -116,6 +116,9 @@ body.home {
     margin-bottom: 30px;
 }
 
+.bottomDiv {
+ 	margin-bottom:7em;
+}
 
 /* #########################################
    #                NAV BAR                #
