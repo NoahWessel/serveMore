@@ -126,9 +126,18 @@
                                                 echo '<span class="tags">' . $s_row['skill'] . '</span>';
                                             }
 
-                                            echo "</p></div><div class='col-xs-12 col-sm-4 text-center'>";                                            
-                                            echo "<img src='profilePics/$user.jpg' class='img-circle img-responsive'>";                                            
-                                            echo "</div>";
+                                            echo "</p></div><div class='col-xs-12 col-sm-4 text-center'>"; 
+                                            echo "<img src='";
+                                            
+                                            if ($u_row['ext'])                      
+                                            {
+                                                $ext = $u_row['ext'];                     
+                                                echo "profilePics/$user.$ext";
+                                            }
+                                            else
+                                                echo "css/images/GenericPerson.png";
+                                                
+                                            echo "' class='img-circle img-responsive'></div>";
 
                                             $result->close();
                                             $conn->close();
