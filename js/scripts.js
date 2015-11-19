@@ -18,7 +18,9 @@ $(function() {
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
                 } else {
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
-					document.location.href='apply.html';
+                    document.body.innerHTML += '<form id="dynForm" action="auth.php" method="post"><input type="hidden" name="email" value="'+$lg_username+'">'+
+                        '<input type="hidden" name="pass" value="'+$lg_password+'"></form>';                    
+                    document.getElementById("dynForm").submit();                    
                 }
                 return false;
                 break;
