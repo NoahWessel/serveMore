@@ -126,9 +126,8 @@
                                                 echo '<span class="tags">' . $s_row['skill'] . '</span>';
                                             }
 
-                                            echo "</p></div><div class='col-xs-12 col-sm-4 text-center'>";
-                                            $pic = $u_row['picture'];
-                                            echo "<img src='profilePics/$pic' class='img-circle img-responsive'>";
+                                            echo "</p></div><div class='col-xs-12 col-sm-4 text-center'>";                                            
+                                            echo "<img src='profilePics/$user.jpg' class='img-circle img-responsive'>";                                            
                                             echo "</div>";
 
                                             $result->close();
