@@ -13,4 +13,11 @@
         $var = sanitizeString($var);
         return $var;
     }
+    
+    function getHash($var)
+    {
+        $salt1="qm&h*";
+        $salt2="pg!@";
+        return hash('ripemd129', "$salt1$var$salt2");
+    }
 ?>
