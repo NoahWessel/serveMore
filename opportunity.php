@@ -91,19 +91,21 @@
 
 		<!--CONTENT-->
 
-			<p class="pageHeader pageBody">APPLY</p>
+			<p class="pageHeader pageBody opportunity">Opportunity Title</p>
 
 			<hr width="50%">
 
 			<!--Row 1-->
 			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="col-md-4 c-center">
+				<div class="row">
+					<div class="col-md-12 c-center">
 						<div class="content">
 							<img class="img-responsive" src="css/images/apply.jpg"/>
 						</div>
 					</div>
-					<div class="col-md-8 c-center">
+				</div>
+				<div class="row">
+					<div class="col-md-12 c-center">
 						<div class="content">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc urna, vulputate vitae nulla et, sollicitudin ultrices justo. Sed sit amet rutrum tellus. Aenean pretium dignissim neque non porttitor. Pellentesque massa tellus, tempus nec consequat nec, porta at elit. Mauris sagittis elit arcu, sed condimentum ex elementum vehicula. Donec dui elit, egestas at nibh quis, luctus porta mi. Sed vitae felis nibh. Aenean at orci sed augue maximus rutrum et sed lorem. Cras eu vulputate augue, vitae blandit enim. Nam felis dui, cursus non orci non, blandit varius neque.
 							</p>
