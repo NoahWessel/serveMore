@@ -91,24 +91,40 @@
 
 		<!--CONTENT-->
 
+<<<<<<< HEAD
 			<p class="pageHeader pageBody" id="selectionTitle">APPLY</p>
+=======
+			<p class="pageHeader pageBody opportunity">Opportunity Title</p>
+>>>>>>> bf3ee97520397ee33e999b73e48a134dab022bff
 
 			<hr width="50%">
 
 			<!--Row 1-->
+<<<<<<< HEAD
 			<div class="container text-center">
 				<div class="row">
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
+=======
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12 c-center">
+>>>>>>> bf3ee97520397ee33e999b73e48a134dab022bff
 						<div class="content">
 							<img class="img-responsive" src="css/images/apply.jpg" style="margin-bottom:3em;"/>
 						</div>
 					</div>
+<<<<<<< HEAD
 					<div class="col-md-4"></div>
 				</div>
 				<div class="row">
 					<div class="col-md-3"></div>
 					<div class="col-md-6">
+=======
+				</div>
+				<div class="row">
+					<div class="col-md-12 c-center">
+>>>>>>> bf3ee97520397ee33e999b73e48a134dab022bff
 						<div class="content">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc urna, vulputate vitae nulla et, sollicitudin ultrices justo. Sed sit amet rutrum tellus. Aenean pretium dignissim neque non porttitor. Pellentesque massa tellus, tempus nec consequat nec, porta at elit. Mauris sagittis elit arcu, sed condimentum ex elementum vehicula. Donec dui elit, egestas at nibh quis, luctus porta mi. Sed vitae felis nibh. Aenean at orci sed augue maximus rutrum et sed lorem. Cras eu vulputate augue, vitae blandit enim. Nam felis dui, cursus non orci non, blandit varius neque.
 							</p>
