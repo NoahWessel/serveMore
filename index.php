@@ -38,7 +38,7 @@ require_once 'tools.php';?>
 
          	<div class="collapse navbar-collapse ">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="about.html">ABOUT</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
                		<li><a href="apply.html">APPLY</a></li>
                		<li><a href="promote.html">PROMOTE</a></li>
                         <?php 
@@ -149,36 +149,12 @@ require_once 'tools.php';?>
                                     <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
                             	</div>
                                 
-                                <div>
-                                    <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-                                    <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                                <div>                                    
+                                    <button id="login_register_btn" type="button" class="btn btn-link">Register Now</button>
                             	</div>
                             </div>
                     	</form>
                     	<!-- End # Login Form -->
-
-                    	<!-- Begin | Lost Password Form -->
-                    	<form id="lost-form" style="display:none;">
-                            <div class="modal-body">
-                                <div id="div-lost-msg">
-                                    <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                    <span id="text-lost-msg">Type your email.</span>
-                            	</div>
-                                <input id="lost_email" class="form-control" type="text" placeholder="Email" required>
-                            </div>
-                            
-                            <div class="modal-footer">
-                            	<div>
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
-                            	</div>
-                                
-                            	<div>
-                                    <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
-                                    <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
-                            	</div>
-                            </div>
-                    	</form>
-                    	<!-- End | Lost Password Form -->
 
                     	<!-- Begin | Register Form -->
                     	<form id="register-form" style="display:none;">
@@ -201,8 +177,7 @@ require_once 'tools.php';?>
                             	</div>
                                 
                             	<div>
-                                    <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
-                                    <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                                    <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>                                    
                             	</div>
                             </div>
                     	</form>

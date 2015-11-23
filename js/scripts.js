@@ -20,16 +20,7 @@ $(function() {
                 document.getElementById("logForm").submit();                    
                 
                 return false;
-                break;
-            case "lost-form":
-                var $ls_email=$('#lost_email').val();
-                if ($ls_email == "ERROR") {
-                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "error", "glyphicon-remove", "Send error");
-                } else {
-                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "success", "glyphicon-ok", "Send OK");
-                }
-                return false;
-                break;
+                break;            
             case "register-form":                
                 var $rg_email=$('#register_email').val();
                 var $rg_firstName=$('#register_firstName').val();
