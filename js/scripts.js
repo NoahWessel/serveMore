@@ -14,34 +14,35 @@ $(function() {
             case "login-form":
                 var $lg_username=$('#login_username').val();
                 var $lg_password=$('#login_password').val();
-                if ($lg_username == "ERROR") {
-                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
-                } else {
-                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
-                    document.body.innerHTML += '<form id="dynForm" action="auth.php" method="post"><input type="hidden" name="email" value="'+$lg_username+'">'+
-                        '<input type="hidden" name="pass" value="'+$lg_password+'"></form>';                    
-                    document.getElementById("dynForm").submit();                    
-                }
+                
+                document.body.innerHTML += '<form id="logForm" action="auth.php" method="post"><input type="hidden" name="email" value="'+$lg_username+'">'+
+                    '<input type="hidden" name="pass" value="'+$lg_password+'"></form>';                    
+                document.getElementById("logForm").submit();                    
+                
                 return false;
-                break;
-            case "lost-form":
-                var $ls_email=$('#lost_email').val();
-                if ($ls_email == "ERROR") {
-                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "error", "glyphicon-remove", "Send error");
-                } else {
-                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "success", "glyphicon-ok", "Send OK");
-                }
-                return false;
-                break;
-            case "register-form":
-                var $rg_username=$('#register_username').val();
+                break;            
+            case "register-form":                
                 var $rg_email=$('#register_email').val();
+                var $rg_firstName=$('#register_firstName').val();
+                var $rg_lastName=$('#register_lastName').val();
                 var $rg_password=$('#register_password').val();
-                if ($rg_username == "ERROR") {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
-                } else {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
+                var $rg_password2=$('#register_password2').val();
+                
+                if ($rg_password == $rg_password2)
+                {
+                    document.body.innerHTML += '<form id="regForm" action="reg.php" method="post">'+
+                        '<input type="hidden" name="regEmail" value="'+$rg_email+'">'+                    
+                        '<input type="hidden" name="fname" value="'+$rg_firstName+'">'+
+                        '<input type="hidden" name="lname" value="'+$rg_lastName+'">'+
+                        '<input type="hidden" name="regPW" value="'+$rg_password+'">'+
+                        '</form>';
+                    document.getElementById("regForm").submit();                    
                 }
+                else
+                {
+                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Passwords Don't Match");
+                }
+                
                 return false;
                 break;
             default:

@@ -25,7 +25,7 @@
 	<div class="navbar-center navbar-custom">
 		<div class="container">
 			<div class="navbar-header">
-        		<a href="index.html" class="navbar-brand ">ServeMore</a>
+        		<a href="index.php" class="navbar-brand ">ServeMore</a>
 
             	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<span class="sr-only">Toggle Navigation</span>
@@ -100,46 +100,53 @@
                                             echo "<div class='col-xs-12 col-sm-8'>";
                                             $conn = new mysqli('localhost', 'root', '', 'servemoredata');
                                             if ($conn->connect_error) die($conn->connect_error);
-                                            $user = $_SESSION['user']; // change this number for a different user (currently 1-9 are valid)
-                                            $query = "SELECT * FROM users WHERE id=$user";
-
-                                            $result = $conn->query($query);
-                                            if (!$result) die($conn->error);
-
-                                            $u_row = $result->fetch_array(MYSQLI_ASSOC);
-                                            if ($u_row)
-                                            {
-                                                echo '<h2>' . $u_row['firstname'] . ' ' . $u_row['lastname'] . '</h2>';
-                                                echo '<p><strong>About: </strong> ' . $u_row['about'] . '</p>';
-                                            }
-                                            $result->close();
-
-                                            $query = "SELECT skill FROM skills WHERE user=$user";
-                                            $result = $conn->query($query);
-                                            if (!$result) die($conn->error);
-
-                                            echo '<p><strong>Skills: </strong>';
-                                            for ($i = 0; $i < $result->num_rows; ++$i)
-                                            {
-                                                $result->data_seek($i);
-                                                $s_row = $result->fetch_array(MYSQLI_ASSOC);
-                                                echo '<span class="tags">' . $s_row['skill'] . '</span>';
-                                            }
-
-                                            echo "</p></div><div class='col-xs-12 col-sm-4 text-center'>"; 
-                                            echo "<img src='";
                                             
-                                            if ($u_row['ext'])                      
+                                            if (isset($_SESSION['userID']))
                                             {
-                                                $ext = $u_row['ext'];                     
-                                                echo "profilePics/$user.$ext";
+                                                $user = $_SESSION['userID'];
+                                                $query = "SELECT * FROM users WHERE id=$user";
+
+                                                $result = $conn->query($query);
+                                                if (!$result) die($conn->error);
+
+                                                $u_row = $result->fetch_array(MYSQLI_ASSOC);
+                                                if ($u_row)
+                                                {
+                                                    echo '<h2>' . $u_row['firstname'] . ' ' . $u_row['lastname'] . '</h2>';
+                                                    echo '<p><strong>About: </strong> ' . $u_row['about'] . '</p>';
+                                                }
+                                                $result->close();
+
+                                                $query = "SELECT skill FROM skills WHERE user=$user";
+                                                $result = $conn->query($query);
+                                                if (!$result) die($conn->error);
+
+                                                echo '<p><strong>Skills: </strong>';
+                                                for ($i = 0; $i < $result->num_rows; ++$i)
+                                                {
+                                                    $result->data_seek($i);
+                                                    $s_row = $result->fetch_array(MYSQLI_ASSOC);
+                                                    echo '<span class="tags">' . $s_row['skill'] . '</span>';
+                                                }
+
+                                                echo "</p></div><div class='col-xs-12 col-sm-4 text-center'>"; 
+                                                echo "<img src='";
+                                                
+                                                if ($u_row['ext'])                      
+                                                {
+                                                    $ext = $u_row['ext'];                     
+                                                    echo "profilePics/$user.$ext";
+                                                }
+                                                else
+                                                    echo "css/images/GenericPerson.png";
+                                                    
+                                                echo "' class='img-circle img-responsive'></div>";
+
+                                                $result->close();
                                             }
                                             else
-                                                echo "css/images/GenericPerson.png";
-                                                
-                                            echo "' class='img-circle img-responsive'></div>";
-
-                                            $result->close();
+                                                echo "NO USER LOGGED IN";
+                                            
                                             $conn->close();
                                         ?>
             			</div>
