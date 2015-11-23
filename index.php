@@ -1,3 +1,5 @@
+<?php session_start(); 
+require_once 'tools.php';?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,9 +41,17 @@
                         <li class="active"><a href="about.html">ABOUT</a></li>
                		<li><a href="apply.html">APPLY</a></li>
                		<li><a href="promote.html">PROMOTE</a></li>
-                        <?php if isset($_SESSION['user']) echo "<li><a href='profile.php'>MY PROFILE</a></li>";
-                        else echo "<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>"; ?>                        
-               		<li><a href="#" data-toggle="modal" data-target="#login-modal">MY PROFILE</a></li>
+                        <?php 
+                            if (isset($_SESSION['userID']))
+                            {
+                                $uName = strtoupper($_SESSION['userName']);
+                                echo "<li><a href='profile.php'>$uName</a></li>";
+                                echo "<li><a href='?logout'>LOGOUT</a></li>";
+                                
+                                if (isset($_GET['logout'])) logout();
+                            }
+                            else echo "<li><a href='#' data-toggle='modal' data-target='#login-modal'>LOGIN</a></li>";
+                        ?>                                       		
                		<li><a href="report.html">REPORT</a></li>
                     </ul>
                 </div>
@@ -179,7 +189,10 @@
                             	</div>
                                                                 
                             	<input id="register_email" class="form-control" type="text" placeholder="Email" required>
+                                <input id="register_firstName" class="form-control" type="text" placeholder="First Name" required>
+                                <input id="register_lastName" class="form-control" type="text" placeholder="Last Name" required>
                             	<input id="register_password" class="form-control" type="password" placeholder="Password" required>
+                                <input id="register_password2" class="form-control" type="password" placeholder="Retype Password" required>
                             </div>
                             
                             <div class="modal-footer">

@@ -15,4 +15,13 @@
         $salt2="pg!@";
         return hash('ripemd129', "$salt1$var$salt2");
     }
+    
+    function logout() 
+    {
+        session_start();
+        $_SESSION = array();
+        setcookie(session_name(), '', time() - 2592000, '/'); 
+        session_destroy();
+        header('Location: index.php');
+    }
 ?>
