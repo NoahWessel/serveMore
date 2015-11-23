@@ -18,7 +18,8 @@
             $_SESSION['userName'] = $row[2];
             header('Location: index.php');
         }
-        else die("Invalid username/password combination");        
+        else
+            echo die("Invalid username/password combination");        
     }
     else die("Invalid username/password combination");        
     $conn->close();
