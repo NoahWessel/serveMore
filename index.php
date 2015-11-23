@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 require_once 'tools.php';?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@ require_once 'tools.php';?>
         <![endif]-->
         <style></style>
     </head>
-    
+
     <body class="home">
         <!--NAV BAR-->
 	<div class="navbar-center navbar-custom">
@@ -41,17 +41,17 @@ require_once 'tools.php';?>
                         <li><a href="about.html">ABOUT</a></li>
                		<li><a href="apply.html">APPLY</a></li>
                		<li><a href="promote.html">PROMOTE</a></li>
-                        <?php 
+                        <?php
                             if (isset($_SESSION['userID']))
                             {
                                 $uName = strtoupper($_SESSION['userName']);
                                 echo "<li><a href='profile.php'>$uName</a></li>";
                                 echo "<li><a href='?logout'>LOGOUT</a></li>";
-                                
+
                                 if (isset($_GET['logout'])) logout();
                             }
                             else echo "<li><a href='#' data-toggle='modal' data-target='#login-modal'>LOGIN</a></li>";
-                        ?>                                       		
+                        ?>
                		<li><a href="report.html">REPORT</a></li>
                     </ul>
                 </div>
@@ -63,7 +63,7 @@ require_once 'tools.php';?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="input-group" id="adv-search">
-                        <input type="text" class="form-control" placeholder="Search for Opportunities" />                        
+                        <input type="text" class="form-control" placeholder="Search for Opportunities" />
                 	<div class="input-group-btn">
                             <div class="btn-group" role="group">
                                 <div class="dropdown dropdown-lg">
@@ -80,17 +80,17 @@ require_once 'tools.php';?>
                                                     <option value="4">Most commented</option>
                                                 </select>
                                             </div>
-                                        
+
                                             <div class="form-group">
                                                 <label for="contain">Author</label>
                                                 <input class="form-control" type="text" />
                                             </div>
-                                        
+
                                             <div class="form-group">
                                                 <label for="contain">Contains the words</label>
                                                 <input class="form-control" type="text" />
                                             </div>
-                                        
+
                                             <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                                 	</form>
                                     </div>
@@ -110,9 +110,9 @@ require_once 'tools.php';?>
                 <div class="col-md-12">
                     <p id="homeHeader">WELCOME</p>
                     <p id="homeText">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mi dolor, rutrum blandit venenatis sit amet, accumsan quis eros. Fusce auctor faucibus neque, ut posuere est maximus sed. Vestibulum diam augue, sagittis sit amet nisi eu, molestie maximus erat. Aliquam finibus, ante a euismod pretium, tellus lacus condimentum tellus, eget imperdiet lectus lacus in velit. Quisque mollis odio vel faucibus lobortis.
+                        Are you a Morehead State University student seeking to find experience in the community? How about a local Morehead business or resident seeking assistance? ServeMore aims to connect both sides in a meaningful way that makes Morehead a better place to live and grow. Take a few minutes to browse the site and see what it's all about!
                     </p>
-                    
+
                     <!-- Get Started Button -->
                     <p class="text-center"><a href="#" class="btn btn-warning btn-outline btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Get Started</a></p>
                 </div>
@@ -139,17 +139,17 @@ require_once 'tools.php';?>
                                     <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
                                     <span id="text-login-msg">Type your email and password.</span>
                             	</div>
-				    			
+
                                 <input id="login_username" class="form-control" type="text" placeholder="Email" required>
                                 <input id="login_password" class="form-control" type="password" placeholder="Password" required>
                             </div>
-                            
+
                             <div class="modal-footer">
                                 <div>
                                     <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
                             	</div>
-                                
-                                <div>                                    
+
+                                <div>
                                     <button id="login_register_btn" type="button" class="btn btn-link">Register Now</button>
                             	</div>
                             </div>
@@ -163,21 +163,21 @@ require_once 'tools.php';?>
                                     <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
                                     <span id="text-register-msg">Register an account.</span>
                             	</div>
-                                                                
+
                             	<input id="register_email" class="form-control" type="text" placeholder="Email" required>
                                 <input id="register_firstName" class="form-control" type="text" placeholder="First Name" required>
                                 <input id="register_lastName" class="form-control" type="text" placeholder="Last Name" required>
                             	<input id="register_password" class="form-control" type="password" placeholder="Password" required>
                                 <input id="register_password2" class="form-control" type="password" placeholder="Retype Password" required>
                             </div>
-                            
+
                             <div class="modal-footer">
                                 <div>
                                     <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
                             	</div>
-                                
+
                             	<div>
-                                    <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>                                    
+                                    <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
                             	</div>
                             </div>
                     	</form>
@@ -186,8 +186,8 @@ require_once 'tools.php';?>
                     <!-- End # DIV Form -->
                 </div>
             </div>
-        </div>        
-        
+        </div>
+
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
