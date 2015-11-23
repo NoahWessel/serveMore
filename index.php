@@ -27,7 +27,7 @@ require_once 'tools.php';?>
 	<div class="navbar-center navbar-custom">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand ">ServeMore</a>
+                    <a href="index.php" class="navbar-brand ">ServeMore</a>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
@@ -110,7 +110,7 @@ require_once 'tools.php';?>
                 <div class="col-md-12">
                     <p id="homeHeader">WELCOME</p>
                     <p id="homeText">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mi dolor, rutrum blandit venenatis sit amet, accumsan quis eros. Fusce auctor faucibus neque, ut posuere est maximus sed. Vestibulum diam augue, sagittis sit amet nisi eu, molestie maximus erat. Aliquam finibus, ante a euismod pretium, tellus lacus condimentum tellus, eget imperdiet lectus lacus in velit. Quisque mollis odio vel faucibus lobortis.
+                        Are you a Morehead State University student seeking to find experience in the community? How about a local Morehead business or resident seeking assistance? ServeMore aims to connect both sides in a meaningful way that makes Morehead a better place to live and grow. Take a few minutes to browse the site and see what it's all about!
                     </p>
                     
                     <!-- Get Started Button -->
