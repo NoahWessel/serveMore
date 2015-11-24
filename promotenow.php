@@ -4,10 +4,10 @@
     if ($conn->connect_error) die($conn->connect_error);
     
     session_start();
-    if (isset($_SESSION['user']))
+    if (isset($_SESSION['userID']))
     {
         $name = sanitize($conn, $_POST['title']);
-        $promoter = $_SESSION['user'];        
+        $promoter = $_SESSION['userID'];        
         $descrip = sanitize($conn, $_POST['description']);
         $loc = sanitize($conn, $_POST['location']);
         $goals = sanitize($conn, $_POST['goals']);        
