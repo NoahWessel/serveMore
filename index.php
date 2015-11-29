@@ -38,7 +38,7 @@ require_once 'tools.php';?>
 
          	<div class="collapse navbar-collapse ">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="about.html">ABOUT</a></li>               		
+                        <li><a href="about.html">ABOUT</a></li>
                         <?php
                             if (isset($_SESSION['userID']))
                             {
@@ -53,7 +53,7 @@ require_once 'tools.php';?>
                             }
                             else echo "<li><a href='#' data-toggle='modal' data-target='#login-modal'>LOGIN</a></li>";
                         ?>
-               		
+
                     </ul>
                 </div>
             </div>
@@ -125,7 +125,7 @@ require_once 'tools.php';?>
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header" align="center">
-                        <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
+                        <img id="img_logo" src="css/images/logo.png">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
