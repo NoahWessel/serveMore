@@ -47,11 +47,15 @@ require_once 'tools.php';?>
                                 $uName = strtoupper($_SESSION['userName']);
                                 echo "<li><a href='profile.php'>$uName</a></li>";
                                 echo "<li><a href='?logout'>LOGOUT</a></li>";
-                                echo "<li><a href='report.html'>REPORT</a></li>";
+                                //echo "<li><a href='report.html'>REPORT</a></li>";
 
                                 if (isset($_GET['logout'])) logout();
                             }
-                            else echo "<li><a href='#' data-toggle='modal' data-target='#login-modal'>LOGIN</a></li>";
+                            else 
+                            {
+                                echo "<li><a href='apply.html'>BROWSE</a></li>";
+                                echo "<li><a href='#' data-toggle='modal' data-target='#login-modal'>LOGIN</a></li>";
+                            }
                         ?>
 
                     </ul>
@@ -115,7 +119,16 @@ require_once 'tools.php';?>
                     </p>
 
                     <!-- Get Started Button -->
-                    <p class="text-center"><a href="#" class="btn btn-warning btn-outline btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Get Started</a></p>
+                    <?php
+                        echo "<p class='text-center'><a href='";
+                        
+                        if (isset($_SESSION['userID']))
+                            echo "apply.html'";
+                        else
+                            echo "#' data-toggle='modal' data-target='#login-modal'";
+                            
+                        echo "class='btn btn-warning btn-outline btn-lg' role='button'>Get Started</a></p>";
+                    ?>
                 </div>
             </div>
         </div>

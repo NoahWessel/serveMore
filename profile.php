@@ -37,11 +37,17 @@
 
          	<div class="collapse navbar-collapse">
            		<ul class="nav navbar-nav navbar-right">
-               		<li><a href="about.html">ABOUT</a></li>
-               		<li><a href="apply.html">APPLY</a></li>
-               		<li><a href="promote.html">PROMOTE</a></li>
-               		<li class="active"><a href="profile.php">MY PROFILE</a></li>
-               		<li><a href="report.html">REPORT</a></li>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href='apply.html'>APPLY</a></li>
+                            <li><a href='promote.html'>PROMOTE</a></li>
+                        
+                            <?php                                                         
+                                $uName = strtoupper($_SESSION['userName']);
+                                echo "<li><a href='profile.php'>$uName</a></li>";                                                    
+                            ?>
+                            
+                            <li><a href='index.php?logout'>LOGOUT</a></li>
+                            <!--<li><a href="report.html">REPORT</a></li>-->
            		</ul>
          	</div>
 		</div>
