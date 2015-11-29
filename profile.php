@@ -101,7 +101,7 @@
 				<div class="row">
 					<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
     	 			<div class="well profile">
-            			<div class="col-sm-12">
+            			<div class="col-sm-12" style="padding-bottom:2em">
                                         <?php
                                             echo "<div class='col-xs-12 col-sm-8'>";
                                             $conn = new mysqli('localhost', 'root', '', 'servemoredata');
@@ -157,24 +157,30 @@
                                         ?>
             			</div>
             			<div class="col-xs-12 divider text-center">
-                			<div class="col-xs-12 col-sm-4 emphasis">
-                    			<button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
-								<button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
-								<div class="btn-group dropup btn-block">
-                      				<button type="button" class="btn btn-primary"><span class="fa fa-gear"></span> Options </button>
-                      				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                        				<span class="caret"></span>
-                        				<span class="sr-only">Toggle Dropdown</span>
-                      				</button>
-                      				<ul class="dropdown-menu text-left" role="menu">
-                        				<li><a href="#"><span class="fa fa-envelope pull-right"></span> Send an email </a></li>
-                        				<li><a href="#"><span class="fa fa-list pull-right"></span> Add or remove from a list  </a></li>
-                        				<li class="divider"></li>
-                        				<li><a href="#"><span class="fa fa-warning pull-right"></span>Report this user for spam</a></li>
-                        				<li class="divider"></li>
-                        				<li><a href="#" class="btn disabled" role="button"> Unfollow </a></li>
-                      				</ul>
-                    			</div>
+                			<div class="row divider text-center" style="padding-top:2em">
+                    			<div class="col-xs-4">
+                                     <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
+                                </div>
+                                <div class="col-xs-4">
+								    <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+                                </div>
+                                <div class="col-xs-4">
+								    <div class="btn-group dropup btn-block">
+                      				  <button type="button" class="btn btn-primary"><span class="fa fa-gear"></span> Options </button>
+                      				  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        				    <span class="caret"></span>
+                        				    <span class="sr-only">Toggle Dropdown</span>
+                      				  </button>
+                      				  <ul class="dropdown-menu text-left" role="menu">
+                        				    <li><a href="#"><span class="fa fa-envelope pull-right"></span> Send an email </a></li>
+                        				    <li><a href="#"><span class="fa fa-list pull-right"></span> Add or remove from a list  </a></li>
+                        				    <li class="divider"></li>
+                        				    <li><a href="#"><span class="fa fa-warning pull-right"></span>Report this user for spam</a></li>
+                        				    <li class="divider"></li>
+                        				    <li><a href="#" class="btn disabled" role="button"> Unfollow </a></li>
+                      				  </ul>
+                    			     </div>
+                                </div>
                 			</div>
             			</div>
     	 			</div>
