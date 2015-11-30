@@ -27,9 +27,12 @@
             $target_dir = "oppPics/$id/";
             mkdir("oppPics/$id", 0777, true);
             $temp_target = $target_dir.$_FILES['picture']['name'];
-            $type = pathinfo($temp_target, PATHINFO_EXTENSION);
-            $target_file = $target_dir."0".".$type";            
-            move_uploaded_file($_FILES['picture']['tmp_name'], $target_file);                
+            $ext = pathinfo($temp_target, PATHINFO_EXTENSION);
+            $target_file = $target_dir."0".".$ext";            
+            move_uploaded_file($_FILES['picture']['tmp_name'], $target_file);
+            
+            $query = "UPDATE opportunities SET ext='$ext' WHERE id=$id;";
+            $conn->query($query);
         }    
         
         $_SESSION['promoOpp'] = $id;
