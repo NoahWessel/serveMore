@@ -38,16 +38,24 @@
          	<div class="collapse navbar-collapse">
            		<ul class="nav navbar-nav navbar-right">
                             <li><a href="about.html">ABOUT</a></li>
-                            <li><a href='apply.html'>APPLY</a></li>
-                            <li><a href='promote.html'>PROMOTE</a></li>
-                        
-                            <?php                                                         
-                                $uName = strtoupper($_SESSION['userName']);
-                                echo "<li><a href='profile.php'>$uName</a></li>";                                                    
+                            <?php
+                                if (isset($_SESSION['userID']))
+                                {
+                                    echo "<li><a href='apply.html'>APPLY</a></li>";
+                                    echo "<li><a href='promote.html'>PROMOTE</a></li>";
+                                    $uName = strtoupper($_SESSION['userName']);
+                                    echo "<li><a href='profile.php'>$uName</a></li>";
+                                    echo "<li><a href='?logout'>LOGOUT</a></li>";
+                                    //echo "<li><a href='report.html'>REPORT</a></li>";
+
+                                    if (isset($_GET['logout'])) logout();
+                                }
+                                else 
+                                {
+                                    echo "<li><a href='apply.html'>BROWSE</a></li>";
+                                    echo "<li><a href='#' data-toggle='modal' data-target='#login-modal'>LOGIN</a></li>";
+                                }
                             ?>
-                            
-                            <li><a href='index.php?logout'>LOGOUT</a></li>
-                            <!--<li><a href="report.html">REPORT</a></li>-->
            		</ul>
          	</div>
 		</div>

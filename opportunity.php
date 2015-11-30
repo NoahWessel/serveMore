@@ -1,154 +1,174 @@
+<?php session_start();
+require_once 'tools.php';?>
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            
+        <title>Apply</title>
+            
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Apply</title>
-		<!-- Bootstrap -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/styles.css" rel="stylesheet">
-		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-    <!--NAV BAR -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+	
+    <body>
+        <!--NAV BAR -->
 	<div class="navbar-center navbar-custom">
-		<div class="container">
-			<div class="navbar-header">
-        		<a href="index.php" class="navbar-brand ">ServeMore</a>
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="index.php" class="navbar-brand ">ServeMore</a>
 
-            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle Navigation</span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            	</button>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
         	</div>
 
          	<div class="collapse navbar-collapse">
-           		<ul class="nav navbar-nav navbar-right">
-               		<li><a href="about.html">ABOUT</a></li>
-               		<li class="active"><a href="apply.html">APPLY</a></li>
-               		<li><a href="promote.html">PROMOTE</a></li>
-               		<li><a href="profile.php">MY PROFILE</a></li>
-               		<li><a href="report.html">REPORT</a></li>
-           		</ul>
-         	</div>
-		</div>
-    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="about.html">ABOUT</a></li>
+                        <?php
+                            if (isset($_SESSION['userID']))
+                            {
+                                echo "<li><a href='apply.html'>APPLY</a></li>";
+                                echo "<li><a href='promote.html'>PROMOTE</a></li>";
+                                $uName = strtoupper($_SESSION['userName']);
+                                echo "<li><a href='profile.php'>$uName</a></li>";
+                                echo "<li><a href='?logout'>LOGOUT</a></li>";
+                                //echo "<li><a href='report.html'>REPORT</a></li>";
 
-		<!-- Search -->
-		<div class="container pageBody text-center ">
-			<div class="row">
-				<div class="col-md-12">
-            		<div class="input-group" id="adv-search">
-                		<input type="text" class="form-control" placeholder="Search for Opportunities" />
-                		<div class="input-group-btn">
-                    		<div class="btn-group" role="group">
-                        		<div class="dropdown dropdown-lg">
-                            		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                            		<div class="dropdown-menu dropdown-menu-right" role="menu">
-                                		<form class="form-horizontal" role="form">
-                                  		<div class="form-group">
-                                    		<label for="filter">Filter by</label>
-                                    		<select class="form-control">
-                                        		<option value="0" selected>All Snippets</option>
-                                        		<option value="1">Featured</option>
-                                        		<option value="2">Most popular</option>
-                                        		<option value="3">Top rated</option>
-                                        		<option value="4">Most commented</option>
-                                    		</select>
-                                  		</div>
-                                  		<div class="form-group">
-                                    		<label for="contain">Author</label>
-                                    		<input class="form-control" type="text" />
-                                  		</div>
-                                  		<div class="form-group">
-                                    		<label for="contain">Contains the words</label>
-                                    		<input class="form-control" type="text" />
-                                  		</div>
-                                  		<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                                		</form>
-                            		</div>
-                        		</div>
-                        		<button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                    		</div>
-                		</div>
-            		</div>
-          		</div>
-        	</div>
-		</div>
+                                if (isset($_GET['logout'])) logout();
+                            }
+                            else 
+                            {
+                                echo "<li><a href='apply.html'>BROWSE</a></li>";
+                                echo "<li><a href='#' data-toggle='modal' data-target='#login-modal'>LOGIN</a></li>";
+                            }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-		<!--CONTENT-->
+        <!-- Search -->
+	<div class="container pageBody text-center ">
+            <div class="row">
+		<div class="col-md-12">
+                    <div class="input-group" id="adv-search">
+                        <input type="text" class="form-control" placeholder="Search for Opportunities" />                        
+                        <div class="input-group-btn">
+                            <div class="btn-group" role="group">
+                                <div class="dropdown dropdown-lg">                                
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                                    
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <form class="form-horizontal" role="form">
+                                            <div class="form-group">
+                                                <label for="filter">Filter by</label>
+                                                <select class="form-control">
+                                                    <option value="0" selected>All Snippets</option>
+                                                    <option value="1">Featured</option>
+                                                    <option value="2">Most popular</option>
+                                                    <option value="3">Top rated</option>
+                                                    <option value="4">Most commented</option>
+                                                </select>
+                                            </div>
+                                                
+                                            <div class="form-group">
+                                                <label for="contain">Author</label>
+                                                <input class="form-control" type="text" />
+                                            </div>
+                                                
+                                            <div class="form-group">
+                                                <label for="contain">Contains the words</label>
+                                                <input class="form-control" type="text" />
+                                            </div>
+                                                
+                                            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                        </form>
+                                    </div>
+                                </div>
+                                    
+                                <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--CONTENT-->
+        <p class="pageHeader pageBody" id="selectionTitle">APPLY</p>
 
-<<<<<<< HEAD
-			<p class="pageHeader pageBody" id="selectionTitle">APPLY</p>
-=======
-			<p class="pageHeader pageBody opportunity">Opportunity Title</p>
->>>>>>> bf3ee97520397ee33e999b73e48a134dab022bff
+        <?php 
+            $conn = new mysqli('localhost', 'root', '', 'servemoredata');
+            if ($conn->connect_error) die($conn->connect_error);
+                                            
+            if (isset($_SESSION['promoOpp']))
+            {
+                $opp = $_SESSION['promoOpp'];
+                $query = "SELECT * FROM opportunities WHERE id=$opp";
+                
+                $result = $conn->query($query);
+                if (!$result) die($conn->error);
+                
+                $opp_row = $result->fetch_array(MYSQLI_ASSOC);
+                if ($opp_row)
+                {
+                    echo '<p class="pageHeader pageBody opportunity">' . $opp_row['name'] . '</p>';  
+                    
+                    echo '<div class="container text-center"><div class="row"><div class="col-md-4"><div class="content">';
+                    echo '<img class="img-responsive" src="';
+                    
+                    if ($opp_row['ext'])                      
+                    {
+                        $ext = $opp_row['ext'];                     
+                        echo "oppPics/$opp/0.$ext";
+                    }
+                                        
+                    echo '" style="margin-bottom:3em;"/>';
+                    echo '</div></div></div>';
+                    
+                    echo '<div class="row"><div class="col-md-12 c-center"><div class="content">';
+                    echo '<p>' . $opp_row['description'] . '</p>';
+                    echo '</div></div></div></div>';
+                }
+                $result->close();                
+            }
+            else
+                echo "<p>NO OPPORTUNITIY SELECTED</p>";
+                
+            $conn->close();
+        ?>                    
 
-			<hr width="50%">
+        <!-- Apply Button -->
+        <div class="container text-center bottomBtns">
+            <div class="row" style="padding-top:80px">
+                <div class="col-md-12">
+                    <p><a href="internships.html" class="btn btn-warning btn-outline btn-lg" role="button">Apply Now</a></p>
+                </div>
+            </div>
+        </div>
 
-			<!--Row 1-->
-<<<<<<< HEAD
-			<div class="container text-center">
-				<div class="row">
-					<div class="col-md-4"></div>
-					<div class="col-md-4">
-=======
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-12 c-center">
->>>>>>> bf3ee97520397ee33e999b73e48a134dab022bff
-						<div class="content">
-							<img class="img-responsive" src="css/images/apply.jpg" style="margin-bottom:3em;"/>
-						</div>
-					</div>
-<<<<<<< HEAD
-					<div class="col-md-4"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-3"></div>
-					<div class="col-md-6">
-=======
-				</div>
-				<div class="row">
-					<div class="col-md-12 c-center">
->>>>>>> bf3ee97520397ee33e999b73e48a134dab022bff
-						<div class="content">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc urna, vulputate vitae nulla et, sollicitudin ultrices justo. Sed sit amet rutrum tellus. Aenean pretium dignissim neque non porttitor. Pellentesque massa tellus, tempus nec consequat nec, porta at elit. Mauris sagittis elit arcu, sed condimentum ex elementum vehicula. Donec dui elit, egestas at nibh quis, luctus porta mi. Sed vitae felis nibh. Aenean at orci sed augue maximus rutrum et sed lorem. Cras eu vulputate augue, vitae blandit enim. Nam felis dui, cursus non orci non, blandit varius neque.
-							</p>
-						</div>
-					</div>
-					<div class="col-md-3"></div>
-				</div>
-			</div>
-
-			<!-- Apply Button -->
-			<div class="container text-center bottomBtns">
-				<div class="row" style="padding-top:80px">
-					<div class="col-md-12">
-						<p><a href="internships.html" class="btn btn-warning btn-outline btn-lg" role="button">Apply Now</a></p>
-
-					</div>
-				</div>
-			</div>
-
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
-	</body>
+    </body>
 </html>
